@@ -29,7 +29,7 @@ class EmployeeController extends Controller
 
         // Mengambil file avatar dari request
         if ($request->hasFile('avatar')) {
-            $avatar_path = $request->file('avatar')->store('user-avatar', 'public');
+            $avatar_path = $request->file('avatar')->store('public/user-avatar');
 
             // Simpan nama file avatar ke dalam database
             Employee::create([
