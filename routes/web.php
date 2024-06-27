@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\EmployeeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [EmployeeController::class, 'web_employee_index'])->name('dashboard');
+Route::get('/add-data', [EmployeeController::class, 'web_employee_add'])->name('employee.add');
+Route::post('/store-data', [EmployeeController::class, 'web_employee_store'])->name('employee.store');
+
