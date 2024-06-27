@@ -29,7 +29,7 @@
             @foreach ($employees as $employee)
                 <tr>
                     <td>{{ $i }}</td>
-                    <td><img class="avatar" src="{{ URL::asset('') . $employee->avatar}}" alt="Default Profile" height="45px"></td>
+                    <td><img class="avatar" src="{{ asset($employee->avatar) }}" alt="Default Profile" height="45px"></td>
                     <td>{{ $employee->name }}</td>
                     <td>{{ $employee->age }} years old</td>
                 </tr>
